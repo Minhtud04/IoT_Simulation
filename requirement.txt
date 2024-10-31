@@ -1,0 +1,37 @@
+Simulation Steps:   (Since locations is not mattered here - I will only do a simulation on 1 cluster with random Assignments of Monitor)
+
+
+1. Create a list of node in Oxy - then group the node into 3 clusters
+ - This is done with K-means clustering algorithms - grouping clusters based on the distance between the nodes -> just to minimize power used
+
+
+2. Create each Clusters based on the positionList of that cluster:
+ - Create Nodes(x,y, freqSent, freqRecv, monitor, monitoredBy) --> each node monitors a node and is monitored by another node
+ - Create Malicious Node - here freqSent and freqRecv are higher than the normal nodes
+
+3. Simulation:
+    - Each second, each node send a message of (freqSent, freqRecv) to its monitor Node
+    - Monitor Node add it to the log?
+
+
+#--------------------------
+Question:
+1. Predefined behavior process:
+- In this simulation - I predefine a static behavior for all the nodes with: NOR_BEHAV_SEND/RECV_RANGE. Maybe what we really need to do is to record the behavior of this node in real life and come up with its normal behavior
+- Then, after this define-behavior phase, I will need to inject false Node in, and see if the monitor can detect the anomaly
+
+
+2. How to detect the anomaly?
+- Just simply that the freqSent and freqRecv of the node is higher than the normal range?
+                    What could be the anomalous behavior?
+                    - If the node sends more messages than usual
+                    - If the node receives more messages than usual
+
+
+3. Reason for why need 2 monitors:
+ -  Monitors use the behavior-analysis algorithm to continuously evaluate the transmissions and sensed readings they receive from their charges and use the behavior-analysis algorithm to determine if those values differ significantly from the charge’s expected behaviors.
+ -  the monitor initiates the process of “casting off” said charge. In this process, the monitor sends notifications to its cluster head and to the central hub, which in turn probe the charge’s second monitor to confirm the assessment.
+
+
+4. In real life, if we doing this -> each IoT devices will need to add another chips, which will have the information of its monitor and keep sending the sent/recv freq /second to this monitor?
+
