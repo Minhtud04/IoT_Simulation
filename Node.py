@@ -1,8 +1,10 @@
 import random
+
+from node_cluster import NodeCluster
 class Node():
     def __init__(self, x,y, freqSent, freqRecv):
         self.x, self.y = x,y
-        self.comLog: List[(int, int)] = []          #record the communication log of the node monitored by this node
+        self.comLog: list[(int, int)] = []          #record the communication log of the node monitored by this node
         self.monitor = None                         #the node that this node monitor
         self.monitoredBy = None                     #the node that monitor this node
 

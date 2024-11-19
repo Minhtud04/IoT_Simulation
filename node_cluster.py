@@ -1,4 +1,5 @@
-import node
+import random
+from node import Node
 
 class NodeCluster():
     THRESHOLD = 30
