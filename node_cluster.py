@@ -1,3 +1,5 @@
+import node
+
 class NodeCluster():
     THRESHOLD = 30
     NOR_BEHAVIOR_SEND_RANGE = (10,20)
@@ -48,7 +50,7 @@ class NodeCluster():
                 freqSent, freqRecv = node.sendRecvFreqPerSec()
                 monitorNode = node.monitoredBy
                 if monitorNode:
-                     monitorNode.recordComLog(freqSent, freqRecv)        #Send the freqSent and freqRecv to the monitor
+                     monitorNode.recordComLog(freqSent, freqRecv)        #Send thejk freqSent and freqRecv to the monitor
 
         for node in self.nodes:
             print(str(node))
