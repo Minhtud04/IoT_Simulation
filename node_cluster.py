@@ -15,7 +15,7 @@ class NodeCluster():
         self.injectMaliciousNode(maliciousNodes)
         self.assignMonitor()
 
-    #If we have a list of cluster position first - we could use that position List to continue instead
+    # If we have a list of cluster position first - we could use that position List to continue instead
     def createNodeList(self, n):
         for i in range(n):
             x = random.randint(0, 100)

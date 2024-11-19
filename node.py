@@ -1,20 +1,23 @@
 import random
 
 from node_cluster import NodeCluster
+
 class Node():
     def __init__(self, x,y, freqSent, freqRecv):
         self.x, self.y = x,y
-        self.comLog: list[(int, int)] = []          #record the communication log of the node monitored by this node
-        self.monitor = None                         #the node that this node monitor
-        self.monitoredBy = None                     #the node that monitor this node
+        self.comLog: list[(int, int)] = []          # Record the communication log of the node monitored by this node
+        self.monitor = None                         # Rhe node that this node monitor
+        self.monitoredBy = None                     # the node that monitor this node
 
         self.freqSent = freqSent
         self.freqRecv = freqRecv
 
+        self.defaultEnergy = 1
+
         # self.thresHoldSendRecv = THRESHOLD
 
     def sendRecvFreqPerSec(self):
-        #normal distribution of (0,5) for freqSent and freqRecv
+        # Uniform distribution of (0,5) for freqSent and freqRecv
         freqSent = max(0, self.freqSent + random.randint(-5,5))
         freqRecv = max(0, self.freqRecv + random.randint(-5,5))
         return freqSent, freqRecv
