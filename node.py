@@ -7,12 +7,13 @@ class Node():
         self.x, self.y = x,y
         self.comLog: list[(int, int)] = []          # Record the communication log of the node monitored by this node
         self.monitor = None                         # Rhe node that this node monitor
-        self.monitoredBy = None                     # the node that monitor this node
+        self.monitoredBy = None                     # the node that monitor this node 
 
         self.freqSent = freqSent
         self.freqRecv = freqRecv
 
-        self.defaultEnergy = 1
+        self.energyConsumption = 1
+        self.batteryCharge = 1500
 
         # self.thresHoldSendRecv = THRESHOLD
 
@@ -34,5 +35,5 @@ class Node():
 
 
 if __name__ == '__main__':
-    nodeCluster = NodeCluster(5, 2)         #5 normal nodes, 2 malicious nodes
-    nodeCluster.simulate(10)                #simulate 10 seconds - 10 times loop
+    nodeCluster = NodeCluster(5, 2)         # 5 normal nodes, 2 malicious nodes
+    nodeCluster.simulate(10)                # Simulate 10 seconds - 10 times loop
